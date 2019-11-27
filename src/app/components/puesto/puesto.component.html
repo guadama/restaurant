@@ -1,5 +1,11 @@
-<div class="mascarade">
+<div class="mascarade" id="bienvenido" (click)="showMenu()">
     <span class="reloj"></span>
     <h2 class="puesto">B3</h2>
     <span class="mensaje">Bienvenido</span>
+</div>
+
+<div class="mascarade" id="menu" *ngIf="!isWelcome">
+    <span class="reloj"></span>
+    <h2 class="puesto">B3</h2>
+    <span class="mensaje">Menu</span>
 </div>
