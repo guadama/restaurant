@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PuestoComponent implements OnInit {
 
   isWelcome: boolean = true;
+  puesto: string = '';
 
   constructor() { }
 
