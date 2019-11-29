@@ -1,33 +1,11 @@
 <div class="row mesa-bg backer">
     <div class="col-md-2">
-        <div class="helper-container row">
-            <div class="col-md-12 center no-padding">
-                <button class="btn btn-outline-primary btn-block mybutton">
-                    <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="col-md-12 center no-padding">
-                <button class="btn btn-outline-primary btn-block mybutton">
-                    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="col-md-12 center no-padding">
-                <button class="btn btn-outline-primary btn-block mybutton">
-                    <i class="fa fa-list-alt fa-2x" aria-hidden="true"></i>
-                </button>
-            </div>
-        </div>
+        <app-menu></app-menu>
     </div>
     <div class="col-md-10"></div>
 </div>
 <div class="mascarade" (click)="showMenu()" *ngIf="isWelcome">
-    <span class="reloj"></span>
+    <span class="reloj">{{ hora }}</span>
     <h2 class="puesto">B3</h2>
     <span class="mensaje">Bienvenido</span>
 </div>
-
-<!-- <div class="mascarade" id="menu" *ngIf="!isWelcome">
-    <span class="reloj"></span>
-    <h2 class="puesto">B3</h2>
-    <span class="mensaje">Menu</span>
-</div> -->
