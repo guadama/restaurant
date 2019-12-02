@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { PuestoComponent } from './components/puesto/puesto.component';
 import { ScreenSaverComponent } from './components/screen-saver/screen-saver.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { SlideComponent } from './components/slide/slide.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PuestoComponent,
     ScreenSaverComponent,
-    MenuComponent
+    MenuComponent,
+    SlideComponent
   ],
   imports: [
     BrowserModule

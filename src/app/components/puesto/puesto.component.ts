@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { XsegundoService } from '../../services/xsegundo.service';
+import { ValorReloj } from '../../models/valor-reloj';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-puesto',
@@ -6,12 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./puesto.component.scss']
 })
 export class PuestoComponent implements OnInit {
+  datos$: Observable<ValorReloj>;
+  hora: number;
+  minutos: string;
+  dia: string;
+  fecha: string;
+  ampm: string;
+  segundos: string;
 
   isWelcome: boolean = true;
   puesto: string = '';
-  hora: string = '';
 
-  constructor() { }
+  constructor(private segundo: XsegundoService) { }
 
   ngOnInit() {
     this.Clock();
@@ -22,12 +32,15 @@ export class PuestoComponent implements OnInit {
   }
 
   Clock() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-
-    this.hora = h + ":" + m + ":" + s;
+    this.datos$=this.segundo.getInfoReloj();
+    this.datos$.subscribe(x => {
+      this.hora = x.hora;
+      this.minutos = x.minutos;
+      this.dia = x.diadesemana;
+      this.fecha = x.diaymes;
+      this.ampm = x.ampm;
+      this.segundos = x.segundo
+    });
 }
 
 }

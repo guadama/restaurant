@@ -1,11 +1,11 @@
 <div class="row mesa-bg backer">
     <div class="col-md-2">
-        <app-menu></app-menu>
+        <app-slide></app-slide>
     </div>
     <div class="col-md-10"></div>
 </div>
 <div class="mascarade" (click)="showMenu()" *ngIf="isWelcome">
-    <span class="reloj">{{ hora }}</span>
-    <h2 class="puesto">B3</h2>
+    <span class="reloj">{{fecha}} {{hora}}:{{minutos}}:{{segundos}} {{ampm}} </span>
+    <span class="puesto">B3</span>
     <span class="mensaje">Bienvenido</span>
 </div>
